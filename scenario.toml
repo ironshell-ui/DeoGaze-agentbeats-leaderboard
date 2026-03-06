@@ -1,15 +1,15 @@
 # DeoGaze / Entropic CRMArena Assessment
-# Green Agent: Entropic CRMArena (by rkstu)
+# Green Agent: Entropic CRMArena (by rkstu) — needs OPENAI_API_KEY for GPT-4o evaluation
 # Purple Agent: IronShell (by ironshell-ui)
 
 [green_agent]
 agentbeats_id = "019ba211-13b7-7e83-9086-c8015a5e4957"
-env = { LOG_LEVEL = "INFO" }
+env = { LOG_LEVEL = "INFO", OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [[participants]]
 agentbeats_id = "ironshell-ui/ironshell"
 name = "agent"
-env = { LOG_LEVEL = "INFO", DEEPSEEK_API_KEY = "${DEEPSEEK_API_KEY}", KIMI_API_KEY = "${KIMI_API_KEY}", MINIMAX_API_KEY = "${MINIMAX_API_KEY}", SERPAPI_KEY = "${SERPAPI_KEY}" }
+env = { LOG_LEVEL = "INFO", DEEPSEEK_API_KEY = "${DEEPSEEK_API_KEY}", KIMI_API_KEY = "${KIMI_API_KEY}", MINIMAX_API_KEY = "${MINIMAX_API_KEY}", SERPAPI_KEY = "${SERPAPI_KEY}", OPENAI_API_KEY = "${OPENAI_API_KEY}", GOOGLE_API_KEY = "${GOOGLE_API_KEY}" }
 
 [config]
 task_limit = 20
