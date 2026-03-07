@@ -1,0 +1,23 @@
+# run: CRMArena Exact-First Match v6.0 — 2026-03-07T14:00
+# DeoGaze / Entropic CRMArena Assessment
+# Green Agent: Entropic CRMArena (by rkstu) — needs OPENAI_API_KEY for GPT-4o evaluation
+# Purple Agent: IronShell (by ironshell-ui)
+
+[green_agent]
+agentbeats_id = "019ba211-13b7-7e83-9086-c8015a5e4957"
+env = { LOG_LEVEL = "INFO", OPENAI_API_KEY = "${OPENAI_API_KEY}" }
+
+[[participants]]
+agentbeats_id = "ironshell-ui/ironshell"
+name = "agent"
+env = { LOG_LEVEL = "INFO", DEEPSEEK_API_KEY = "${DEEPSEEK_API_KEY}", KIMI_API_KEY = "${KIMI_API_KEY}", MINIMAX_API_KEY = "${MINIMAX_API_KEY}", SERPAPI_KEY = "${SERPAPI_KEY}", OPENAI_API_KEY = "${OPENAI_API_KEY}", GOOGLE_API_KEY = "${GOOGLE_API_KEY}", OPENROUTER_API_KEY = "${OPENROUTER_API_KEY}", FEATHERLESS_API_KEY = "${FEATHERLESS_API_KEY}" }
+
+[config]
+task_limit = 20
+run_id = 8
+drift_level = "none"
+rot_level = "none"
+org_type = "b2b"
+max_steps = 15
+timeout = 300
+
