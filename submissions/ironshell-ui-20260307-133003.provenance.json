@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/rkstu/entropic-crmarena-green@sha256:f801c2584235faa0750eae35eeba494107919a59eb12bb4e53ede15e9ff620d3",
+    "agent": "ghcr.io/ironshell-ui/claudecowork-agent@sha256:01f665634ce70c2a96f30edcd96de320bcac8a69312729012f8f0c6f8c785c50",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-03-07T13:30:03Z",
+  "github_actions": {
+    "run_url": "https://github.com/ironshell-ui/DeoGaze-agentbeats-leaderboard/actions/runs/22799933381",
+    "run_logs_url": "https://api.github.com/repos/ironshell-ui/DeoGaze-agentbeats-leaderboard/actions/runs/22799933381/logs",
+    "ref": "refs/heads/trigger-v5",
+    "sha": "c149598e2d3bbbee489cb47a29aef6483c7c7a38",
+    "repository_url": "https://github.com/ironshell-ui/DeoGaze-agentbeats-leaderboard",
+    "workflow_ref": "ironshell-ui/DeoGaze-agentbeats-leaderboard/.github/workflows/run-scenario.yml@refs/heads/trigger-v5",
+    "workflow_sha": "c149598e2d3bbbee489cb47a29aef6483c7c7a38"
+  }
+}
