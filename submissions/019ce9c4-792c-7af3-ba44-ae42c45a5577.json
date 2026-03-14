@@ -1,0 +1,85 @@
+{
+  "manifest_version": "0.1.0",
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "green_nebius_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "green_openai_api_key": {
+        "type": "string",
+        "secret": true
+      }
+    },
+    "required": [
+      "green_openai_api_key",
+      "green_nebius_api_key"
+    ],
+    "additionalProperties": false
+  },
+  "components": {
+    "gateway": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/agentbeats-gateway/refs/heads/main/amber-manifest.json5",
+      "config": {
+        "assessment_config": {
+          "drift_level": "none",
+          "rot_level": "none",
+          "max_steps": 7,
+          "timeout": 300,
+          "org_type": "b2c"
+        },
+        "participant_roles": {
+          "green": "green",
+          "purple1": "agent"
+        },
+        "callback_urls": {
+          "green": "${bindings.green-proxy.url}",
+          "purple1": "${bindings.purple1-proxy.url}"
+        }
+      }
+    },
+    "green": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/DeoGaze-agentbeats/refs/heads/main/amber/amber-manifest-green.json5",
+      "config": {
+        "nebius_api_key": "${config.green_nebius_api_key}",
+        "openai_api_key": "${config.green_openai_api_key}"
+      }
+    },
+    "agent": {
+      "manifest": "https://raw.githubusercontent.com/abhishec/purple-agent-business-process-worker/main/amber.json5",
+      "config": {}
+    }
+  },
+  "bindings": [
+    {
+      "to": "#gateway.green",
+      "from": "#green.a2a"
+    },
+    {
+      "to": "#gateway.purple1",
+      "from": "#agent.a2a"
+    },
+    {
+      "to": "#green.proxy",
+      "from": "#gateway.proxy",
+      "weak": true,
+      "name": "green-proxy"
+    },
+    {
+      "to": "#agent.green_agent",
+      "from": "#gateway.proxy",
+      "weak": true,
+      "name": "purple1-proxy"
+    }
+  ],
+  "exports": {
+    "results": "#gateway.results"
+  },
+  "metadata": {
+    "agentbeats_ids": {
+      "green": "019ca155-47bc-7863-bbc5-4747c4c5975a",
+      "agent": "019cade3-a63f-7283-9991-ab5dbcd815e4"
+    }
+  }
+}
