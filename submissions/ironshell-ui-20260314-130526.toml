@@ -1,0 +1,17 @@
+[green_agent]
+agentbeats_id = "019ca155-47bc-7863-bbc5-4747c4c5975a"
+env = { API_KEY = "${GITHUB_SECRET_NAME}", OPENAI_API_KEY = "${OPENAI_API_KEY}", LOG_LEVEL = "INFO" }
+
+[[participants]]
+agentbeats_id = "019cb5e7-e77e-71b1-82d5-41516465fa92"
+name = "agent"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", DEEPSEEK_API_KEY = "${DEEPSEEK_API_KEY}", KIMI_API_KEY = "${KIMI_API_KEY}", MINIMAX_API_KEY = "${MINIMAX_API_KEY}", OPENROUTER_API_KEY = "${OPENROUTER_API_KEY}", FEATHERLESS_API_KEY = "${FEATHERLESS_API_KEY}", XAI_API_KEY = "${XAI_API_KEY}" }
+
+[config]
+task_limit = 2140
+drift_level = "none"
+rot_level = "none"
+org_type = "b2c"
+max_steps = 7
+timeout = 300
+# run: DeoGaze full 2140 tasks — 2026-03-14
